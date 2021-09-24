@@ -55,7 +55,7 @@ function getRandomColor(colors) {
    return colors[index]
 }
 
-function setOrRemoveColorMobail(elem) {
+function setOrRemoveColorMobail(elem,colors) {
    if (elem.classList.contains(el_type[0])) {
       setColor(elem,colors);
       if(elem.classList.contains('active')) {
@@ -69,25 +69,28 @@ function setOrRemoveColorMobail(elem) {
 }
 function TouchStart(e,colors,board)
 {
+   e.preventDefault()
     //Получаем текущую позицию касания
     touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
     touchPosition = { x: touchStart.x, y: touchStart.y };
     //console.log(touchPosition.x, touchPosition.y);
     //let rectBoardCollection = e.target.getClientRects();
     currentMobailEl = document.elementFromPoint(touchPosition.x, touchPosition.y);
-    setOrRemoveColorMobail(currentMobailEl);
+    setOrRemoveColorMobail(currentMobailEl,colors);
 }
 
 function TouchMove(e,colors,board)
 {
+   e.preventDefault()
     //Получаем новую позицию
     touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
     currentMobailEl= document.elementFromPoint(touchPosition.x, touchPosition.y);
-    setOrRemoveColorMobail(currentMobailEl);
+    setOrRemoveColorMobail(currentMobailEl,colors);
 }
 
 function TouchEnd(e)
 {
+   e.preventDefault()
     touchStart = null;
     touchPosition = null;
 }
