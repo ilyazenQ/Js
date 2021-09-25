@@ -4,8 +4,13 @@ const sidebar = document.querySelector('.sidebar');
 const mainSlide = document.querySelector('.main-slide');
 const slidesCount = mainSlide.querySelectorAll('div').length;
 const container = document.querySelector('.container');
+// Mobail 
+const sensitivity = 20;
 
+let touchStart = null; //Точка начала касания
+let touchPosition = null; //Текущая позиция
 let activeSlideIndex = 0;
+
 sidebar.style.top = `-${(slidesCount - 1)*100}vh`;
 
 upBtn.addEventListener('click', () => {
@@ -36,11 +41,6 @@ function changeSlide(direction) {
 setInterval(() => changeSlide('up'), 5000);
 
 // Mobail swipe
-//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
-const sensitivity = 20;
-
-let touchStart = null; //Точка начала касания
-let touchPosition = null; //Текущая позиция
 
 //Перехватываем события
 mainSlide.addEventListener("touchstart", function (e) { TouchStart(e); }); 
