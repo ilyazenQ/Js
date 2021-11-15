@@ -1,16 +1,22 @@
+
 (function () {
-   'use strict';
 
    const wrapper = document.getElementById('main-page');
    const pointerEl = document.getElementById('pointer');
    const circle = document.getElementById('circle-box');
-   const heart = document.getElementById('heart-wrapper');
+   const heartWrapper = document.getElementById('heart-wrapper');
+   const heartSvg = document.getElementById('heart');
    const ghost = document.getElementById('ghost-container');
 
-   
-  
+//   function tunnelActive () {
+//    mainContentHidden();
+//    tunnel();
+//   }
+ // function mainContentHidden() {
+//    wrapper.classList.add('hidden');
+//  }
    function mouseOnCircle (e) {  
-    heart.style.display = "table";
+    heartWrapper.style.display = "table";
    }
    function mouseOnGhost(e) {  
     ghost.classList.remove('ghost-active');
@@ -60,4 +66,5 @@
   // circle.addEventListener('mouseleave', mouseLeaveCircle, false);
   ghost.addEventListener('mouseenter', mouseOnGhost, false);
 
+  //heartSvg.addEventListener('click',tunnelActive,false);
 })();
