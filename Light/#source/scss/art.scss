@@ -1,0 +1,176 @@
+
+.frame {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: -1;
+  background-color: #008B8B;
+  svg {
+     margin: 0 auto;
+     
+  }
+}
+
+#circle1,
+#circle2,
+.small-circle,
+.small-circle-2,
+.small-circle-3,
+.complex,
+.complex-2,
+.ribbon,
+.ribbon-2 {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#circle1 {
+  animation-name: middle-circle;
+  animation-duration: 25s;
+}
+
+#circle2 {
+  animation-name: middle-circle;
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.small-circle {
+  animation-name: small-circle-scale;
+  animation-duration: 10s;
+}
+
+.small-circle-2 {
+  animation-name: small-circle-scale-2;
+  animation-duration: 10s;
+}
+
+.small-circle ,
+.small-circle-2 {
+  animation-fill-mode: forwards;
+}
+
+.small-circle-3 {
+  animation-name: small-circle-rotate;
+  animation-duration: 30s;
+}
+
+.complex {
+  animation-name: complex-rotate;
+  animation-duration: 45s;
+  transform-origin: 40% 40% 0;
+}
+
+.complex-2 {
+  animation-name: complex-rotate;
+  animation-duration: 35s;
+  transform-origin: 40% 60% 0;
+  animation-direction: reverse;
+}
+
+.ribbon {
+  animation-name: ribbon;
+  animation-duration: 35s;
+}
+
+.ribbon-2 {
+  animation-name: ribbon-reverse;
+  animation-duration: 50s;
+}
+
+@keyframes middle-circle {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(10%);
+  }
+  30% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  70% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes small-circle-scale {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes small-circle-scale-2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes small-circle-rotate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(50deg);
+    opacity: 0;
+  }
+}
+
+@keyframes complex-rotate {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes ribbon {
+  0% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes ribbon-reverse {
+  0% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+
+  100% {
+    transform: translateX(-15%);
+  }
+}

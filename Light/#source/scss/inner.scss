@@ -1,9 +1,45 @@
+.hidden {
+   display: none;
+}
 .inner-page {
-   position: relative;
-   background-color: white;
    height: 100vh;
    min-height: 25rem;
    width: 100%;
    overflow: hidden;
-   z-index: 1;
+   position: relative;
+   z-index: 0;
 }
+.center-img {
+   position: absolute;
+   z-index: 1;
+   width: 100%;
+   top:50%;
+   left:37%;
+   height: 100%;
+   background-color: inherit;
+   transform-box: fill-box;
+   transform-origin:10% 15%;
+   //transform:rotate(90deg);
+   img {
+      width: 400px;
+      height: auto;
+   }
+}
+@media (max-width: 600px) {
+   .center-img {
+      position: absolute;
+      z-index: 1;
+      width: 250px;
+      top:55%;
+      left:25%;
+      height: 100%;
+      background-color: inherit;
+      transform-box: fill-box;
+      transform-origin:10% 15%;
+      //transform:rotate(90deg);
+      img {
+         width: 250px;
+         height: auto;
+      }
+   }
+  }
